@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 
 interface ButtonProps {
     label: string;
@@ -9,4 +9,15 @@ interface ButtonProps {
 }
 declare const Button: React.FC<ButtonProps>;
 
-export { Button };
+interface Column {
+    header: string;
+    accessor: string;
+}
+interface TableProps {
+    data: Record<string, any>[] | null;
+    columns: Column[] | null;
+    onRowClick: (rowData: Record<string, any>) => void;
+}
+declare const Table: FC<TableProps>;
+
+export { Button, Table };

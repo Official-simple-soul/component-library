@@ -4191,5 +4191,18 @@ var Button = function (props) {
     return (jsxRuntimeExports.jsx("button", __assign({ className: "border px-6 py-2 rounded-md ".concat(props.btn_color, " ").concat(props.btn_text_color, " ").concat(props.btn_text_size), onClick: props.onClick }, { children: props.label })));
 };
 
-export { Button };
+var Table = function (_a) {
+    var data = _a.data, columns = _a.columns, onRowClick = _a.onRowClick;
+    return (jsxRuntimeExports.jsx("div", __assign({ className: 'overflow-x-auto' }, { children: jsxRuntimeExports.jsxs("table", __assign({ className: 'min-w-full border-separate border-spacing-y-2' }, { children: [jsxRuntimeExports.jsx("thead", __assign({ className: 'bg-[#eef1f5]' }, { children: jsxRuntimeExports.jsx("tr", { children: columns === null || columns === void 0 ? void 0 : columns.map(function (column, index) { return (jsxRuntimeExports.jsx("th", __assign({ className: "".concat(index === 0
+                                ? "rounded-l-md"
+                                : index === columns.length - 1
+                                    ? "rounded-r-md"
+                                    : "", " px-6 py-3 text-left text-xs font-medium text-blue-ribbon-500 tracking-wider") }, { children: column.header }), index)); }) }) })), jsxRuntimeExports.jsx("tbody", __assign({ className: 'bg-white ' }, { children: data === null || data === void 0 ? void 0 : data.map(function (row, rowIndex) { return (jsxRuntimeExports.jsx("tr", __assign({ onClick: function () { return onRowClick(row); }, className: 'hover:bg-blue-ribbon-100 transition-all ease-in-out duration-100 cursor-pointer' }, { children: columns === null || columns === void 0 ? void 0 : columns.map(function (column, colIndex) { return (jsxRuntimeExports.jsx("td", __assign({ className: "".concat(colIndex === 0
+                                ? "rounded-l-md"
+                                : colIndex === columns.length - 1
+                                    ? "rounded-r-md"
+                                    : "", " px-6 py-4 whitespace-nowrap text-sm text-gray-900") }, { children: jsxRuntimeExports.jsx("span", { children: row[column.accessor] }) }), colIndex)); }) }), rowIndex)); }) }))] })) })));
+};
+
+export { Button, Table };
 //# sourceMappingURL=index.js.map
