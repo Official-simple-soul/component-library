@@ -37,7 +37,7 @@ function App() {
   return (
     <div className='App bg-red-600 h-96 w-96'>
       <h1>what</h1>
-      {/* <Table columns={columns} data={data} onRowClick={handleClick} /> */}
+      <Table columns={columns} data={data} onRowClick={handleClick} />
     </div>
   );
 }
