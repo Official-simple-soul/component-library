@@ -4280,14 +4280,14 @@ var TableRow = function (_a) {
     var rowIndex = _a.rowIndex, row = _a.row, columns = _a.columns, select = _a.select, menu = _a.menu, onRowClick = _a.onRowClick; _a.onRowMenuClick; var data = _a.data, menuOption = _a.menuOption, onRowMenuOptionClick = _a.onRowMenuOptionClick, bg_color = _a.bg_color, text_color = _a.text_color, menu_bg_color = _a.menu_bg_color, isChecked = _a.isChecked, onCheckboxChange = _a.onCheckboxChange;
     var _b = reactExports.useState(false), open = _b[0], setOpen = _b[1];
     var handleClick = function () {
-        onRowClick === null || onRowClick === void 0 ? void 0 : onRowClick(row);
+        onRowClick(row);
     };
     var clickMenu = function (menuOptionEach) {
         onRowMenuOptionClick === null || onRowMenuOptionClick === void 0 ? void 0 : onRowMenuOptionClick(menuOptionEach);
     };
     reactExports.useEffect(function () {
     }, [isChecked]);
-    return (jsxRuntimeExports.jsxs("tr", __assign$1({ onClick: handleClick, className: "hover:".concat(bg_color, "/50 ").concat(bg_color !== null && bg_color !== void 0 ? bg_color : "bg-white", " ").concat(text_color, " transition-all ease-in-out duration-100 cursor-pointer relative") }, { children: [select && (jsxRuntimeExports.jsx("th", __assign$1({ className: 'rounded-l-md pl-2' }, { children: jsxRuntimeExports.jsx("input", { type: 'checkbox', name: '', id: '', checked: isChecked, onChange: function (e) { return onCheckboxChange === null || onCheckboxChange === void 0 ? void 0 : onCheckboxChange(rowIndex, e.target.checked); } }) }))), columns === null || columns === void 0 ? void 0 : columns.map(function (column, colIndex) { return (jsxRuntimeExports.jsx("td", __assign$1({ className: "px-6 py-4 whitespace-nowrap text-sm text-start" }, { children: jsxRuntimeExports.jsx("span", { children: row[column.accessor] }) }), colIndex)); }), menu && (jsxRuntimeExports.jsx("td", __assign$1({ className: 'rounded-r-md', onClick: function () { return setOpen(!open); } }, { children: jsxRuntimeExports.jsx(CiMenuKebab, {}) }))), open && data && (jsxRuntimeExports.jsx("div", __assign$1({ className: "".concat(rowIndex === data.length - 1 ||
+    return (jsxRuntimeExports.jsxs("tr", __assign$1({ onClick: handleClick, className: "hover:".concat(bg_color, "/50 ").concat(bg_color !== null && bg_color !== void 0 ? bg_color : "bg-white", " ").concat(text_color, " transition-all ease-in-out duration-100 cursor-pointer relative") }, { children: [select && (jsxRuntimeExports.jsx("th", __assign$1({ className: 'rounded-l-md pl-2' }, { children: jsxRuntimeExports.jsx("input", { type: 'checkbox', name: '', id: '', checked: isChecked, onChange: function (e) { return onCheckboxChange(rowIndex, e.target.checked); } }) }))), columns === null || columns === void 0 ? void 0 : columns.map(function (column, colIndex) { return (jsxRuntimeExports.jsx("td", __assign$1({ className: "px-6 py-4 whitespace-nowrap text-sm text-start" }, { children: jsxRuntimeExports.jsx("span", { children: row[column.accessor] }) }), colIndex)); }), menu && (jsxRuntimeExports.jsx("td", __assign$1({ className: 'rounded-r-md', onClick: function () { return setOpen(!open); } }, { children: jsxRuntimeExports.jsx(CiMenuKebab, {}) }))), open && data && (jsxRuntimeExports.jsx("div", __assign$1({ className: "".concat(rowIndex === data.length - 1 ||
                     rowIndex === data.length - 2 ||
                     rowIndex === data.length - 3
                     ? "-top-20 "
@@ -4331,11 +4331,11 @@ var Table = function (_a) {
         if (checked) {
             var allRows = sortedData !== null && sortedData !== void 0 ? sortedData : [];
             setSelectedRows(allRows);
-            onRowSelect === null || onRowSelect === void 0 ? void 0 : onRowSelect(allRows);
+            onRowSelect(allRows);
         }
         else {
             setSelectedRows([]);
-            onRowSelect === null || onRowSelect === void 0 ? void 0 : onRowSelect([]);
+            onRowSelect([]);
         }
         setAllChecked(checked);
         var updatedCheckboxes = Array((data === null || data === void 0 ? void 0 : data.length) || 0).fill(checked);
@@ -4355,7 +4355,7 @@ var Table = function (_a) {
                 }
             }
             setSelectedRows(updatedRows);
-            onRowSelect === null || onRowSelect === void 0 ? void 0 : onRowSelect(updatedRows);
+            onRowSelect(updatedRows);
         }
         var updatedCheckboxes = __spreadArray([], rowCheckboxes, true);
         updatedCheckboxes[index] = checked;

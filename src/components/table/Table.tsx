@@ -18,13 +18,13 @@ interface Styles {
 interface TableProps {
   data: Record<string, any>[] | null;
   columns: Column[] | null;
-  styles?: Styles;
-  onRowClick?: (rowData: Record<string, any>) => void;
-  select?: boolean;
-  menu?: boolean;
+  styles: Styles;
+  onRowClick: (rowData: Record<string, any>) => void;
+  select: boolean;
+  menu: boolean;
   menuOption?: Record<string, any>[] | null;
   onRowMenuOptionClick?: (row: Record<string, any>) => void;
-  onRowSelect?: (selectedRows: Record<string, any>[]) => void;
+  onRowSelect: (selectedRows: Record<string, any>[]) => void;
 }
 
 const onRowMenuClick = (clickedRow: Record<string, any>) => {
@@ -76,10 +76,10 @@ const Table: FC<TableProps> = ({
     if (checked) {
       const allRows = sortedData ?? [];
       setSelectedRows(allRows);
-      onRowSelect?.(allRows);
+      onRowSelect(allRows);
     } else {
       setSelectedRows([]);
-      onRowSelect?.([]);
+      onRowSelect([]);
     }
 
     setAllChecked(checked);
@@ -103,7 +103,7 @@ const Table: FC<TableProps> = ({
         }
       }
       setSelectedRows(updatedRows);
-      onRowSelect?.(updatedRows);
+      onRowSelect(updatedRows);
     }
 
     const updatedCheckboxes = [...rowCheckboxes];
