@@ -59,7 +59,7 @@ const TableRow: React.FC<TableRowProps> = ({
     if (isChecked) {
       // Logic to check the row
     } else {
-      // Logic to uncheck the row
+      // Logic to uncheck the rowa
     }
   }, [isChecked]);
 

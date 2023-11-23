@@ -154,6 +154,7 @@ const Table: FC<TableProps> = ({
         <tbody className=''>
           {sortedData?.map((row, rowIndex) => (
             <TableRow
+              key={rowIndex}
               row={row}
               rowIndex={rowIndex}
               columns={columns}
