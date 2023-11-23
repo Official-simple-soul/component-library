@@ -1,6 +1,6 @@
 {
   "name": "@Official-simple-soul/components-library",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "private": false,
   "dependencies": {
     "@types/jest": "^27.5.0",
