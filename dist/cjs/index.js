@@ -17,35 +17,21 @@ PERFORMANCE OF THIS SOFTWARE.
 /* global Reflect, Promise, SuppressedError, Symbol */
 
 
-var __assign$1 = function() {
-    __assign$1 = Object.assign || function __assign(t) {
+var __assign = function() {
+    __assign = Object.assign || function __assign(t) {
         for (var s, i = 1, n = arguments.length; i < n; i++) {
             s = arguments[i];
             for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
         }
         return t;
     };
-    return __assign$1.apply(this, arguments);
+    return __assign.apply(this, arguments);
 };
-
-function __spreadArray(to, from, pack) {
-    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
-        if (ar || !(i in from)) {
-            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
-            ar[i] = from[i];
-        }
-    }
-    return to.concat(ar || Array.prototype.slice.call(from));
-}
 
 typeof SuppressedError === "function" ? SuppressedError : function (error, suppressed, message) {
     var e = new Error(message);
     return e.name = "SuppressedError", e.error = error, e.suppressed = suppressed, e;
 };
-
-function getDefaultExportFromCjs (x) {
-	return x && x.__esModule && Object.prototype.hasOwnProperty.call(x, 'default') ? x['default'] : x;
-}
 
 var jsxRuntime = {exports: {}};
 
@@ -2846,7 +2832,6 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 var reactExports = react.exports;
-var React = /*@__PURE__*/getDefaultExportFromCjs(reactExports);
 
 /**
  * @license React
@@ -4199,176 +4184,23 @@ if (process.env.NODE_ENV === 'production') {
 var jsxRuntimeExports = jsxRuntime.exports;
 
 var Button = function (props) {
-    return (jsxRuntimeExports.jsx("button", __assign$1({ className: "border px-6 py-2 rounded-md ".concat(props.btn_color, " ").concat(props.btn_text_color, " ").concat(props.btn_text_size), onClick: props.onClick }, { children: props.label })));
+    return (jsxRuntimeExports.jsx("button", __assign({ className: "border px-6 py-2 rounded-md ".concat(props.btn_color, " ").concat(props.btn_text_color, " ").concat(props.btn_text_size), onClick: props.onClick }, { children: props.label })));
 };
 
-var DefaultContext = {
-  color: undefined,
-  size: undefined,
-  className: undefined,
-  style: undefined,
-  attr: undefined
-};
-var IconContext = React.createContext && React.createContext(DefaultContext);
-
-var __assign = undefined && undefined.__assign || function () {
-  __assign = Object.assign || function (t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-      s = arguments[i];
-      for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
-    }
-    return t;
-  };
-  return __assign.apply(this, arguments);
-};
-var __rest = undefined && undefined.__rest || function (s, e) {
-  var t = {};
-  for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
-  if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-    if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
-  }
-  return t;
-};
-function Tree2Element(tree) {
-  return tree && tree.map(function (node, i) {
-    return React.createElement(node.tag, __assign({
-      key: i
-    }, node.attr), Tree2Element(node.child));
-  });
-}
-function GenIcon(data) {
-  // eslint-disable-next-line react/display-name
-  return function (props) {
-    return React.createElement(IconBase, __assign({
-      attr: __assign({}, data.attr)
-    }, props), Tree2Element(data.child));
-  };
-}
-function IconBase(props) {
-  var elem = function (conf) {
-    var attr = props.attr,
-      size = props.size,
-      title = props.title,
-      svgProps = __rest(props, ["attr", "size", "title"]);
-    var computedSize = size || conf.size || "1em";
-    var className;
-    if (conf.className) className = conf.className;
-    if (props.className) className = (className ? className + " " : "") + props.className;
-    return React.createElement("svg", __assign({
-      stroke: "currentColor",
-      fill: "currentColor",
-      strokeWidth: "0"
-    }, conf.attr, attr, svgProps, {
-      className: className,
-      style: __assign(__assign({
-        color: props.color || conf.color
-      }, conf.style), props.style),
-      height: computedSize,
-      width: computedSize,
-      xmlns: "http://www.w3.org/2000/svg"
-    }), title && React.createElement("title", null, title), props.children);
-  };
-  return IconContext !== undefined ? React.createElement(IconContext.Consumer, null, function (conf) {
-    return elem(conf);
-  }) : elem(DefaultContext);
-}
-
-// THIS FILE IS AUTO GENERATED
-function CiMenuKebab (props) {
-  return GenIcon({"tag":"svg","attr":{"viewBox":"0 0 24 24"},"child":[{"tag":"g","attr":{"id":"Menu_Kebab"},"child":[{"tag":"path","attr":{"d":"M14.5,12c0,1.38 -1.12,2.5 -2.5,2.5c-1.38,-0 -2.5,-1.12 -2.5,-2.5c0,-1.38 1.12,-2.5 2.5,-2.5c1.38,-0 2.5,1.12 2.5,2.5Zm-1,-0c0,-0.828 -0.672,-1.5 -1.5,-1.5c-0.828,-0 -1.5,0.672 -1.5,1.5c0,0.828 0.672,1.5 1.5,1.5c0.828,-0 1.5,-0.672 1.5,-1.5Z"}},{"tag":"path","attr":{"d":"M14.5,4.563c0,1.38 -1.12,2.5 -2.5,2.5c-1.38,-0 -2.5,-1.12 -2.5,-2.5c0,-1.38 1.12,-2.5 2.5,-2.5c1.38,-0 2.5,1.12 2.5,2.5Zm-1,-0c0,-0.828 -0.672,-1.5 -1.5,-1.5c-0.828,-0 -1.5,0.672 -1.5,1.5c0,0.828 0.672,1.5 1.5,1.5c0.828,-0 1.5,-0.672 1.5,-1.5Z"}},{"tag":"path","attr":{"d":"M14.5,19.437c0,1.38 -1.12,2.5 -2.5,2.5c-1.38,0 -2.5,-1.12 -2.5,-2.5c0,-1.38 1.12,-2.5 2.5,-2.5c1.38,0 2.5,1.12 2.5,2.5Zm-1,0c0,-0.828 -0.672,-1.5 -1.5,-1.5c-0.828,0 -1.5,0.672 -1.5,1.5c0,0.828 0.672,1.5 1.5,1.5c0.828,0 1.5,-0.672 1.5,-1.5Z"}}]}]})(props);
-}
-
-var TableRow = function (_a) {
-    var rowIndex = _a.rowIndex, row = _a.row, columns = _a.columns, select = _a.select, menu = _a.menu, onRowClick = _a.onRowClick; _a.onRowMenuClick; var data = _a.data, menuOption = _a.menuOption, onRowMenuOptionClick = _a.onRowMenuOptionClick, bg_color = _a.bg_color, text_color = _a.text_color, menu_bg_color = _a.menu_bg_color, isChecked = _a.isChecked, onCheckboxChange = _a.onCheckboxChange;
+function TableWidget(_a) {
+    var data = _a.data, columns = _a.columns;
     var _b = reactExports.useState(false), open = _b[0], setOpen = _b[1];
-    var handleClick = function () {
-        onRowClick(row);
-    };
-    var clickMenu = function (menuOptionEach) {
-        onRowMenuOptionClick === null || onRowMenuOptionClick === void 0 ? void 0 : onRowMenuOptionClick(menuOptionEach);
-    };
-    reactExports.useEffect(function () {
-    }, [isChecked]);
-    return (jsxRuntimeExports.jsxs("tr", __assign$1({ onClick: handleClick, className: "hover:".concat(bg_color, "/50 ").concat(bg_color !== null && bg_color !== void 0 ? bg_color : "bg-white", " ").concat(text_color, " transition-all ease-in-out duration-100 cursor-pointer relative") }, { children: [select && (jsxRuntimeExports.jsx("th", __assign$1({ className: 'rounded-l-md pl-2' }, { children: jsxRuntimeExports.jsx("input", { type: 'checkbox', name: '', id: '', checked: isChecked, onChange: function (e) { return onCheckboxChange(rowIndex, e.target.checked); } }) }))), columns === null || columns === void 0 ? void 0 : columns.map(function (column, colIndex) { return (jsxRuntimeExports.jsx("td", __assign$1({ className: "px-6 py-4 whitespace-nowrap text-sm text-start" }, { children: jsxRuntimeExports.jsx("span", { children: row[column.accessor] }) }), colIndex)); }), menu && (jsxRuntimeExports.jsx("td", __assign$1({ className: 'rounded-r-md', onClick: function () { return setOpen(!open); } }, { children: jsxRuntimeExports.jsx(CiMenuKebab, {}) }))), open && data && (jsxRuntimeExports.jsx("div", __assign$1({ className: "".concat(rowIndex === data.length - 1 ||
-                    rowIndex === data.length - 2 ||
-                    rowIndex === data.length - 3
-                    ? "-top-20 "
-                    : "top-10", " text-start rounded-md ").concat(menu_bg_color, " absolute right-10 z-50 shadow-md") }, { children: jsxRuntimeExports.jsx("ul", { children: menuOption === null || menuOption === void 0 ? void 0 : menuOption.map(function (each, index) {
-                        return (jsxRuntimeExports.jsx("li", __assign$1({ className: "".concat(menu_bg_color, " px-6 py-2 hover:bg-gray-200 cursor-pointer"), onClick: function () { return clickMenu(each); } }, { children: each.title }), index));
-                    }) }) })))] }), rowIndex));
-};
-
-var onRowMenuClick = function (clickedRow) {
-    console.log(clickedRow);
-};
-var Table = function (_a) {
-    var data = _a.data, columns = _a.columns, onRowClick = _a.onRowClick, select = _a.select, menu = _a.menu, menuOption = _a.menuOption, onRowMenuOptionClick = _a.onRowMenuOptionClick, styles = _a.styles, onRowSelect = _a.onRowSelect;
-    var _b = reactExports.useState({}), sorting = _b[0], setSorting = _b[1];
-    var _c = reactExports.useState(false), allChecked = _c[0], setAllChecked = _c[1];
-    var _d = reactExports.useState([]), rowCheckboxes = _d[0], setRowCheckboxes = _d[1];
-    var _e = reactExports.useState([]), selectedRows = _e[0], setSelectedRows = _e[1];
-    var handleHeaderClick = function (column) {
-        var _a;
-        if (column.sort) {
-            var sortOrder = sorting[column.accessor] === "asc" ? "desc" : "asc";
-            setSorting(__assign$1(__assign$1({}, sorting), (_a = {}, _a[column.accessor] = sortOrder, _a)));
-        }
-    };
-    var sortedData = data === null || data === void 0 ? void 0 : data.slice().sort(function (a, b) {
-        if (columns) {
-            var sortColumn = columns.find(function (col) { return col.accessor in sorting; });
-            if (sortColumn && sortColumn.accessor in sorting) {
-                var sortOrder = sorting[sortColumn.accessor] === "asc" ? 1 : -1;
-                var valueA = a[sortColumn.accessor];
-                var valueB = b[sortColumn.accessor];
-                if (typeof valueA === "string" && typeof valueB === "string") {
-                    return sortOrder * valueA.localeCompare(valueB);
-                }
-                return sortOrder * (valueA - valueB);
-            }
-        }
-        return 0;
-    });
-    var handleHeaderCheckboxChange = function (checked) {
-        if (checked) {
-            var allRows = sortedData !== null && sortedData !== void 0 ? sortedData : [];
-            setSelectedRows(allRows);
-            onRowSelect(allRows);
-        }
-        else {
-            setSelectedRows([]);
-            onRowSelect([]);
-        }
-        setAllChecked(checked);
-        var updatedCheckboxes = Array((data === null || data === void 0 ? void 0 : data.length) || 0).fill(checked);
-        setRowCheckboxes(updatedCheckboxes);
-    };
-    var handleRowCheckboxChange = function (index, checked) {
-        var updatedRows = __spreadArray([], selectedRows, true);
-        var selectedRow = sortedData === null || sortedData === void 0 ? void 0 : sortedData[index];
-        if (selectedRow) {
-            if (checked) {
-                updatedRows.push(selectedRow);
-            }
-            else {
-                var indexes = updatedRows.findIndex(function (row) { return row.id === selectedRow.id; });
-                if (indexes !== -1) {
-                    updatedRows.splice(indexes, 1);
-                }
-            }
-            setSelectedRows(updatedRows);
-            onRowSelect(updatedRows);
-        }
-        var updatedCheckboxes = __spreadArray([], rowCheckboxes, true);
-        updatedCheckboxes[index] = checked;
-        setRowCheckboxes(updatedCheckboxes);
-        setAllChecked(updatedCheckboxes.every(function (checkbox) { return checkbox; }));
-    };
-    return (jsxRuntimeExports.jsx("div", __assign$1({ className: 'overflow-x-auto' }, { children: jsxRuntimeExports.jsxs("table", __assign$1({ className: 'min-w-full border-separate border-spacing-y-2' }, { children: [jsxRuntimeExports.jsx("thead", __assign$1({ className: 'bg-[#eef1f5]' }, { children: jsxRuntimeExports.jsxs("tr", { children: [select && (jsxRuntimeExports.jsx("th", __assign$1({ className: 'rounded-l-md pl-2' }, { children: jsxRuntimeExports.jsx("input", { type: 'checkbox', name: '', id: '', checked: allChecked, onChange: function (e) { return handleHeaderCheckboxChange(e.target.checked); } }) }))), columns === null || columns === void 0 ? void 0 : columns.map(function (column, index) { return (jsxRuntimeExports.jsxs("th", __assign$1({ onClick: function () { return handleHeaderClick(column); }, className: "".concat(column.sort ? "cursor-pointer" : "", " px-6 py-3 text-left text-xs font-medium text-blue-ribbon-500 tracking-wider") }, { children: [column.header, column.sort && sorting[column.accessor] && (jsxRuntimeExports.jsx("span", { children: sorting[column.accessor] === "asc" ? " ▲" : " ▼" }))] }), index)); }), menu && (jsxRuntimeExports.jsx("th", __assign$1({ className: 'rounded-r-md' }, { children: jsxRuntimeExports.jsx(CiMenuKebab, { className: 'opacity-0' }) })))] }) })), jsxRuntimeExports.jsx("tbody", __assign$1({ className: '' }, { children: sortedData === null || sortedData === void 0 ? void 0 : sortedData.map(function (row, rowIndex) { return (jsxRuntimeExports.jsx(TableRow, { row: row, rowIndex: rowIndex, columns: columns, onRowClick: onRowClick, onRowMenuClick: onRowMenuClick, select: select, menu: menu, menuOption: menuOption, data: data, onRowMenuOptionClick: onRowMenuOptionClick, bg_color: styles === null || styles === void 0 ? void 0 : styles.bg_color, text_color: styles === null || styles === void 0 ? void 0 : styles.text_color, menu_bg_color: styles === null || styles === void 0 ? void 0 : styles.menu_bg_color, isChecked: rowCheckboxes[rowIndex] || false, onCheckboxChange: function (index, checked) {
-                            return handleRowCheckboxChange(index, checked);
-                        } }, rowIndex)); }) }))] })) })));
-};
+    return (jsxRuntimeExports.jsx("div", __assign({ className: 'overflow-x-auto' }, { children: jsxRuntimeExports.jsxs("table", __assign({ className: 'min-w-full border-separate border-spacing-y-2' }, { children: [jsxRuntimeExports.jsx("thead", __assign({ className: 'bg-[#eef1f5]' }, { children: jsxRuntimeExports.jsx("tr", { children: columns === null || columns === void 0 ? void 0 : columns.map(function (column, index) { return (jsxRuntimeExports.jsx("th", __assign({ className: "".concat(index === 0
+                                ? "rounded-l-md"
+                                : index === columns.length - 1
+                                    ? "rounded-r-md"
+                                    : "", " px-6 py-3 text-left text-xs font-medium text-blue-ribbon-500 tracking-wider") }, { children: column.header }), index)); }) }) })), jsxRuntimeExports.jsx("tbody", __assign({ className: 'bg-white ' }, { children: data === null || data === void 0 ? void 0 : data.map(function (row, rowIndex) { return (jsxRuntimeExports.jsxs("tr", __assign({ onClick: function () { return setOpen(!open); }, className: 'hover:bg-blue-ribbon-100 transition-all ease-in-out duration-100 cursor-pointer' }, { children: [columns === null || columns === void 0 ? void 0 : columns.map(function (column, colIndex) { return (jsxRuntimeExports.jsx("td", __assign({ className: "".concat(colIndex === 0
+                                    ? "rounded-l-md"
+                                    : colIndex === columns.length - 1
+                                        ? "rounded-r-md"
+                                        : "", " px-6 py-4 whitespace-nowrap text-sm text-gray-900") }, { children: jsxRuntimeExports.jsx("span", { children: row[column.accessor] }) }), colIndex)); }), open && (jsxRuntimeExports.jsx("div", { className: "text-start rounded-md bg-white absolute right-10 z-50 shadow-md h-14 w-14" }))] }), rowIndex)); }) }))] })) })));
+}
 
 exports.Button = Button;
-exports.Table = Table;
+exports.TableWidget = TableWidget;
 //# sourceMappingURL=index.js.map

@@ -1,4 +1,5 @@
-import React, { FC } from 'react';
+import React from 'react';
+import * as react_jsx_runtime from 'react/jsx-runtime';
 
 interface ButtonProps {
     label: string;
@@ -14,23 +15,10 @@ interface Column {
     accessor: string;
     sort?: boolean;
 }
-interface Styles {
-    bg_color: string;
-    text_color: string;
-    menu_bg_color: string;
-    border: boolean;
-}
 interface TableProps {
     data: Record<string, any>[] | null;
     columns: Column[] | null;
-    styles: Styles;
-    onRowClick: (rowData: Record<string, any>) => void;
-    select: boolean;
-    menu: boolean;
-    menuOption?: Record<string, any>[] | null;
-    onRowMenuOptionClick?: (row: Record<string, any>) => void;
-    onRowSelect: (selectedRows: Record<string, any>[]) => void;
 }
-declare const Table: FC<TableProps>;
+declare function TableWidget({ data, columns }: TableProps): react_jsx_runtime.JSX.Element;
 
-export { Button, Table };
+export { Button, TableWidget };

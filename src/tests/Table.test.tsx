@@ -1,10 +1,10 @@
 import { render } from "@testing-library/react";
-import { Table } from "../components";
+import { TableWidget } from "../components";
 
 export {};
 
 test("renders learn react link", () => {
-  render(<Table columns={columns} data={data} />);
+  render(<TableWidget columns={columns} data={data} />);
 });
 
 const columns = [
