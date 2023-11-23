@@ -13,15 +13,15 @@ interface TableRowProps {
   data: Record<string, any>[] | null;
   select?: boolean;
   menu?: boolean;
-  onRowClick: (row: Record<string, any>) => void;
+  onRowClick?: (row: Record<string, any>) => void;
   onRowMenuClick?: (row: Record<string, any>) => void;
   menuOption?: Record<string, any>[] | null;
   onRowMenuOptionClick?: (row: Record<string, any>) => void;
   text_color?: string;
   bg_color?: string;
   menu_bg_color?: string;
-  isChecked: boolean;
-  onCheckboxChange: (rowIndex: number, checked: boolean) => void;
+  isChecked?: boolean;
+  onCheckboxChange?: (rowIndex: number, checked: boolean) => void;
 }
 
 const TableRow: React.FC<TableRowProps> = ({
@@ -44,7 +44,7 @@ const TableRow: React.FC<TableRowProps> = ({
   const [open, setOpen] = useState(false);
 
   const handleClick = () => {
-    onRowClick(row);
+    onRowClick?.(row);
   };
 
   const openMenu = () => {
@@ -78,7 +78,7 @@ const TableRow: React.FC<TableRowProps> = ({
             name=''
             id=''
             checked={isChecked}
-            onChange={(e) => onCheckboxChange(rowIndex, e.target.checked)}
+            onChange={(e) => onCheckboxChange?.(rowIndex, e.target.checked)}
           />
         </th>
       )}
