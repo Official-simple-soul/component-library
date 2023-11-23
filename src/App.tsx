@@ -73,22 +73,7 @@ const handleRowSelection = (selectedRows: Record<string, any>[]) => {
 function App() {
   return (
     <div className='App bg-red-600 h-96 w-96'>
-      <Table
-        columns={columns}
-        data={data}
-        onRowClick={handleClick}
-        select={true}
-        menu={true}
-        menuOption={menuOption}
-        onRowMenuOptionClick={onRowMenuOptionClick}
-        styles={{
-          bg_color: "bg-white",
-          text_color: "text-black",
-          border: true,
-          menu_bg_color: "bg-white/50",
-        }}
-        onRowSelect={handleRowSelection}
-      />
+      <Table columns={columns} data={data} />
     </div>
   );
 }
