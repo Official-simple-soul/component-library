@@ -1,5 +1,5 @@
 {
-  "name": "@Official-simple-soul/components-library",
+  "name": "@msflib/react",
   "version": "0.0.1",
   "private": false,
   "dependencies": {
@@ -68,6 +68,6 @@
   ],
   "types": "dist/index.d.ts",
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/Official-simple-soul"
+    "registry": "https://npm.pkg.github.com/msflib"
   }
 }
