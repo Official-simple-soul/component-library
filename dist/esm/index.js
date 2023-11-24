@@ -2823,19 +2823,13 @@ var l=Symbol.for("react.element"),n=Symbol.for("react.portal"),p=Symbol.for("rea
 	return react_production_min;
 }
 
-var hasRequiredReact;
-
-function requireReact () {
-	if (hasRequiredReact) return react.exports;
-	hasRequiredReact = 1;
-
-	if (process.env.NODE_ENV === 'production') {
-	  react.exports = requireReact_production_min();
-	} else {
-	  react.exports = requireReact_development();
-	}
-	return react.exports;
+if (process.env.NODE_ENV === 'production') {
+  react.exports = requireReact_production_min();
+} else {
+  react.exports = requireReact_development();
 }
+
+var reactExports = react.exports;
 
 /**
  * @license React
@@ -2856,7 +2850,7 @@ function requireReactJsxRuntime_development () {
 	if (process.env.NODE_ENV !== "production") {
 	  (function() {
 
-	var React = requireReact();
+	var React = reactExports;
 
 	// ATTENTION
 	// When adding new symbols to this file,
@@ -4174,7 +4168,7 @@ var hasRequiredReactJsxRuntime_production_min;
 function requireReactJsxRuntime_production_min () {
 	if (hasRequiredReactJsxRuntime_production_min) return reactJsxRuntime_production_min;
 	hasRequiredReactJsxRuntime_production_min = 1;
-var f=requireReact(),k=Symbol.for("react.element"),l=Symbol.for("react.fragment"),m=Object.prototype.hasOwnProperty,n=f.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED.ReactCurrentOwner,p={key:!0,ref:!0,__self:!0,__source:!0};
+var f=reactExports,k=Symbol.for("react.element"),l=Symbol.for("react.fragment"),m=Object.prototype.hasOwnProperty,n=f.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED.ReactCurrentOwner,p={key:!0,ref:!0,__self:!0,__source:!0};
 	function q(c,a,g){var b,d={},e=null,h=null;void 0!==g&&(e=""+g);void 0!==a.key&&(e=""+a.key);void 0!==a.ref&&(h=a.ref);for(b in a)m.call(a,b)&&!p.hasOwnProperty(b)&&(d[b]=a[b]);if(c&&c.defaultProps)for(b in a=c.defaultProps,a)void 0===d[b]&&(d[b]=a[b]);return {$$typeof:k,type:c,key:e,ref:h,props:d,_owner:n.current}}reactJsxRuntime_production_min.Fragment=l;reactJsxRuntime_production_min.jsx=q;reactJsxRuntime_production_min.jsxs=q;
 	return reactJsxRuntime_production_min;
 }
@@ -4192,19 +4186,17 @@ var Button = function (props) {
 };
 
 function TableWidget(_a) {
-    // const [open, setOpen] = useState(false);
     var data = _a.data, columns = _a.columns;
+    var _b = reactExports.useState(false), open = _b[0], setOpen = _b[1];
     return (jsxRuntimeExports.jsx("div", __assign({ className: 'overflow-x-auto' }, { children: jsxRuntimeExports.jsxs("table", __assign({ className: 'min-w-full border-separate border-spacing-y-2' }, { children: [jsxRuntimeExports.jsx("thead", __assign({ className: 'bg-[#eef1f5]' }, { children: jsxRuntimeExports.jsx("tr", { children: columns === null || columns === void 0 ? void 0 : columns.map(function (column, index) { return (jsxRuntimeExports.jsx("th", __assign({ className: "".concat(index === 0
                                 ? "rounded-l-md"
                                 : index === columns.length - 1
                                     ? "rounded-r-md"
-                                    : "", " px-6 py-3 text-left text-xs font-medium text-blue-ribbon-500 tracking-wider") }, { children: column.header }), index)); }) }) })), jsxRuntimeExports.jsx("tbody", __assign({ className: 'bg-white ' }, { children: data === null || data === void 0 ? void 0 : data.map(function (row, rowIndex) { return (jsxRuntimeExports.jsx("tr", __assign({ 
-                        // onClick={() => setOpen(!open)}
-                        className: 'hover:bg-blue-ribbon-100 transition-all ease-in-out duration-100 cursor-pointer' }, { children: columns === null || columns === void 0 ? void 0 : columns.map(function (column, colIndex) { return (jsxRuntimeExports.jsx("td", __assign({ className: "".concat(colIndex === 0
-                                ? "rounded-l-md"
-                                : colIndex === columns.length - 1
-                                    ? "rounded-r-md"
-                                    : "", " px-6 py-4 whitespace-nowrap text-sm text-gray-900") }, { children: jsxRuntimeExports.jsx("span", { children: row[column.accessor] }) }), colIndex)); }) }), rowIndex)); }) }))] })) })));
+                                    : "", " px-6 py-3 text-left text-xs font-medium text-blue-ribbon-500 tracking-wider") }, { children: column.header }), index)); }) }) })), jsxRuntimeExports.jsx("tbody", __assign({ className: 'bg-white ' }, { children: data === null || data === void 0 ? void 0 : data.map(function (row, rowIndex) { return (jsxRuntimeExports.jsxs("tr", __assign({ onClick: function () { return setOpen(!open); }, className: 'hover:bg-blue-ribbon-100 transition-all ease-in-out duration-100 cursor-pointer' }, { children: [columns === null || columns === void 0 ? void 0 : columns.map(function (column, colIndex) { return (jsxRuntimeExports.jsx("td", __assign({ className: "".concat(colIndex === 0
+                                    ? "rounded-l-md"
+                                    : colIndex === columns.length - 1
+                                        ? "rounded-r-md"
+                                        : "", " px-6 py-4 whitespace-nowrap text-sm text-gray-900") }, { children: jsxRuntimeExports.jsx("span", { children: row[column.accessor] }) }), colIndex)); }), open && (jsxRuntimeExports.jsx("div", { className: "text-start rounded-md bg-white absolute right-10 z-50 shadow-md h-14 w-14" }))] }), rowIndex)); }) }))] })) })));
 }
 
 export { Button, TableWidget };
