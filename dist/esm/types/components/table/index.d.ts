@@ -1,1 +1,1 @@
-export { default } from "./TableWidget";
+export { default } from "./Table";

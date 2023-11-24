@@ -1,10 +1,23 @@
 import { render } from "@testing-library/react";
-import { TableWidget } from "../components";
+import { Table } from "../components";
 
 export {};
 
 test("renders learn react link", () => {
-  render(<TableWidget columns={columns} data={data} />);
+  render(
+    <Table
+      columns={columns}
+      data={data}
+      menuOption={menuOption}
+      styles={{
+        bg_color: "bg-green-100",
+        text_color: "",
+        menu_bg_color: "",
+        border: true,
+      }}
+      onRowClick={handleClick}
+    />
+  );
 });
 
 const columns = [

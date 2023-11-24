@@ -5,21 +5,21 @@ interface Column {
     sort?: boolean;
 }
 interface Styles {
-    bg_color: string;
-    text_color: string;
-    menu_bg_color: string;
-    border: boolean;
+    bg_color?: string;
+    text_color?: string;
+    menu_bg_color?: string;
+    border?: boolean;
 }
 interface TableProps {
     data: Record<string, any>[] | null;
     columns: Column[] | null;
-    styles: Styles;
+    styles?: Styles;
     onRowClick: (rowData: Record<string, any>) => void;
-    select: boolean;
-    menu: boolean;
+    select?: boolean;
+    menu?: boolean;
     menuOption?: Record<string, any>[] | null;
     onRowMenuOptionClick?: (row: Record<string, any>) => void;
-    onRowSelect: (selectedRows: Record<string, any>[]) => void;
+    onRowSelect?: (selectedRows: Record<string, any>[]) => void;
 }
 declare const Table: FC<TableProps>;
 export default Table;

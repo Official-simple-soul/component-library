@@ -1,5 +1,5 @@
 import "./App.css";
-import { Button, TableWidget } from "./components";
+import { Button, Table } from "./components";
 
 const columns = [
   { header: "Stage", accessor: "stage_id", sort: true },
@@ -73,7 +73,18 @@ const handleRowSelection = (selectedRows: Record<string, any>[]) => {
 function App() {
   return (
     <div className='App bg-red-600 h-96 w-96'>
-      <TableWidget columns={columns} data={data} />
+      <Table
+        columns={columns}
+        data={data}
+        menuOption={menuOption}
+        styles={{
+          bg_color: "bg-green-100",
+          text_color: "",
+          menu_bg_color: "",
+          border: true,
+        }}
+        onRowClick={handleClick}
+      />
     </div>
   );
 }
