@@ -12,7 +12,7 @@ interface TableProps {
 }
 
 function TableWidget({ data, columns }: TableProps) {
-  // const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false);
 
   return (
     <div className='overflow-x-auto'>
@@ -39,7 +39,7 @@ function TableWidget({ data, columns }: TableProps) {
           {data?.map((row, rowIndex) => (
             <tr
               key={rowIndex}
-              // onClick={() => setOpen(!open)}
+              onClick={() => setOpen(!open)}
               className='hover:bg-blue-ribbon-100 transition-all ease-in-out duration-100 cursor-pointer'
             >
               {columns?.map((column, colIndex) => (
@@ -56,11 +56,11 @@ function TableWidget({ data, columns }: TableProps) {
                   <span>{row[column.accessor]}</span>
                 </td>
               ))}
-              {/* {open && (
+              {open && (
                 <div
                   className={`text-start rounded-md bg-white absolute right-10 z-50 shadow-md h-14 w-14`}
                 ></div>
-              )} */}
+              )}
             </tr>
           ))}
         </tbody>

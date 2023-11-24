@@ -20,10 +20,13 @@ export default [
       },
     ],
     plugins: [
-      resolve(),
+      resolve({
+        moduleDirectories: ["node_modules"],
+      }),
       commonjs(),
       typescript({ tsconfig: "./tsconfig.json" }),
     ],
+    external: ["React"],
   },
   {
     input: "dist/esm/types/index.d.ts",
