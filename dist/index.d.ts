@@ -1,4 +1,5 @@
-import React, { FC } from 'react';
+import React, { FC, ReactNode } from 'react';
+import * as react_jsx_runtime from 'react/jsx-runtime';
 
 interface ButtonProps {
     label: string;
@@ -33,4 +34,31 @@ interface TableProps {
 }
 declare const Table: FC<TableProps>;
 
-export { Button, Table };
+interface SideBarProps {
+    sideItem: Record<string, any>[] | null;
+    app_logo?: string;
+    app_display_name?: string;
+    children?: ReactNode;
+}
+declare const Sidebar: ({ sideItem, app_logo, app_display_name, children, }: SideBarProps) => react_jsx_runtime.JSX.Element;
+
+type NavItem = {
+    label: string;
+    link: string;
+};
+type NavbarProps = {
+    children?: ReactNode;
+    bgColor?: string;
+    textColor?: string;
+    className?: string;
+    nav_logo?: string;
+    button?: boolean;
+    btn_label?: string;
+    btn_color?: string;
+    btn_text_color?: string;
+    nav_item_position?: string;
+    navItems?: NavItem[];
+};
+declare const Navbar: React.FC<NavbarProps>;
+
+export { Button, Navbar as NavBar, Sidebar as SideBar, Table };
