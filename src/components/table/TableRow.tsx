@@ -1,4 +1,4 @@
-import React, { MouseEvent, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { CiMenuKebab } from "react-icons/ci";
 
 interface Column {
@@ -45,10 +45,6 @@ const TableRow: React.FC<TableRowProps> = ({
 
   const handleClick = () => {
     onRowClick(row);
-  };
-
-  const openMenu = () => {
-    onRowMenuClick?.(row);
   };
 
   const clickMenu = (menuOptionEach: Record<string, any>) => {
