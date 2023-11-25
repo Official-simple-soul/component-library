@@ -1,6 +1,6 @@
 {
-  "name": "@msflib/react",
-  "version": "0.0.1",
+  "name": "@Official-simple-soul/components-library",
+  "version": "0.0.2",
   "private": false,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
@@ -68,6 +68,6 @@
   ],
   "types": "dist/index.d.ts",
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/msflib"
+    "registry": "https://npm.pkg.github.com/Official-simple-soul"
   }
 }
