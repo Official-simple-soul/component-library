@@ -1568,5 +1568,26 @@ var Table = function (_a) {
                         } }, rowIndex)); }) }))] })) })));
 };
 
-export { Button, Table };
+var Sidebar = function (_a) {
+    var sideItem = _a.sideItem, app_logo = _a.app_logo, app_display_name = _a.app_display_name, children = _a.children;
+    var _b = useState(1), active = _b[0], setActive = _b[1];
+    var _c = useState(true), showSide = _c[0], setShowSide = _c[1];
+    var handleNavSide = function (index) {
+        setActive(index);
+        setShowSide(false);
+    };
+    return (jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children: jsxRuntimeExports.jsx("div", __assign$1({ className: "".concat(showSide
+                ? "fixed left-0 h-screen"
+                : "h-screen absolute -left-[200%] md:left-0", " overflow-hidden w-[206px] shadow-md md:w-[19%] transition-all ease-in-out duration-500 top-16 md:top-0 bottom-0 z-40 md:fixed") }, { children: jsxRuntimeExports.jsxs("div", __assign$1({ className: 'bg-white h-full' }, { children: [jsxRuntimeExports.jsxs("div", __assign$1({ className: 'flex items-center ml-3 md:justify-center gap-4 pt-6' }, { children: [jsxRuntimeExports.jsx("img", { src: app_logo, alt: 'kodecamp-logo', className: 'w-[36.71px] h-[36px]' }), jsxRuntimeExports.jsx("p", __assign$1({ className: 'font-bold md:text-lg text-[#0D6EFD]' }, { children: app_display_name }))] })), jsxRuntimeExports.jsx("nav", __assign$1({ className: 'mt-6 md:mt-10' }, { children: jsxRuntimeExports.jsx("div", __assign$1({ className: 'relative' }, { children: sideItem === null || sideItem === void 0 ? void 0 : sideItem.map(function (side_item, index) { return (jsxRuntimeExports.jsxs("div", __assign$1({ onClick: function () { return handleNavSide(index); }, className: "".concat(active === index
+                                    ? "bg-blue-100 border-e-4 py-3 border-blue-500 text-blue-500"
+                                    : " py-2", " flex items-center space-x-4 px-3 my-4 transition-all ease-in-out duration-500 cursor-pointer") }, { children: [jsxRuntimeExports.jsx("span", __assign$1({ className: 'text-left' }, { children: side_item.logo })), jsxRuntimeExports.jsx("span", __assign$1({ className: 'text-sm md:text-lg font-normal' }, { children: side_item.name }))] }), index)); }) })) })), children] })) })) }));
+};
+
+var Navbar = function (_a) {
+    var children = _a.children, _b = _a.bgColor, bgColor = _b === void 0 ? "bg-gray-800" : _b, _c = _a.textColor, textColor = _c === void 0 ? "text-white" : _c, _d = _a.className, className = _d === void 0 ? "" : _d, _e = _a.nav_logo, nav_logo = _e === void 0 ? "Logo" : _e, _f = _a.button, button = _f === void 0 ? false : _f, _g = _a.btn_label, btn_label = _g === void 0 ? "button" : _g, _h = _a.btn_color, btn_color = _h === void 0 ? "bg-blue-100" : _h, _j = _a.btn_text_color, btn_text_color = _j === void 0 ? "text-blue-900" : _j, _k = _a.nav_item_position, nav_item_position = _k === void 0 ? "mx-auto" : _k, _l = _a.navItems, navItems = _l === void 0 ? [] : _l;
+    var navbarClasses = "flex justify-between items-center px-4 py-3 ".concat(bgColor, " ").concat(textColor, " ").concat(className);
+    return (jsxRuntimeExports.jsxs("nav", __assign$1({ className: navbarClasses }, { children: [jsxRuntimeExports.jsx("div", __assign$1({ className: 'flex items-center' }, { children: jsxRuntimeExports.jsx("span", __assign$1({ className: 'text-xl font-bold' }, { children: nav_logo ? (jsxRuntimeExports.jsx("img", { src: nav_logo, alt: '', className: 'w-10 h-auto' })) : ("Logo") })) })), jsxRuntimeExports.jsxs("div", __assign$1({ className: "".concat(nav_item_position, " flex items-center px-5") }, { children: [navItems.map(function (item, index) { return (jsxRuntimeExports.jsx("a", __assign$1({ href: item.link, className: 'mx-4' }, { children: item.label }), index)); }), children] })), button && (jsxRuntimeExports.jsx(Button, { label: btn_label, btn_color: btn_color, btn_text_color: btn_text_color }))] })));
+};
+
+export { Button, Navbar as NavBar, Sidebar as SideBar, Table };
 //# sourceMappingURL=index.js.map
